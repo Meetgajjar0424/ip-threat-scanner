@@ -1,0 +1,25 @@
+{
+  "overview": "A cybersecurity-themed IP threat scanner with immersive 3D animations, localStorage-based authentication, and real-time IP reputation checks via AbuseIPDB API with mock fallback.",
+  "features": [
+    "Sign up and login with localStorage-based session (no database)",
+    "Protected dashboard accessible only after login",
+    "IP address input with AbuseIPDB threat intelligence check",
+    "Mock fallback when no API key is configured",
+    "SCAM/MALICIOUS (red glow) or SAFE/CLEAN (green glow) result cards",
+    "Confidence score, country, ISP, and threat type details",
+    "Three.js animated 3D particle network backgrounds on all pages",
+    "3D flip/burst result reveal animation",
+    "Dark futuristic glassmorphism UI with neon accents",
+    "Fully responsive for desktop and mobile"
+  ],
+  "category": "security-tools",
+  "tags": [
+    "cybersecurity",
+    "ip-checker",
+    "3d-animations",
+    "threejs",
+    "authentication",
+    "threat-intelligence"
+  ],
+  "last_updated": "2026-04-19T13:48:06.591Z"
+}

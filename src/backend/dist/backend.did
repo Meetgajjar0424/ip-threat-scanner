@@ -1,0 +1,42 @@
+type http_request_result = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type http_header = 
+ record {
+   name: text;
+   value: text;
+ };
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: http_request_result;
+ };
+type IPResult = 
+ record {
+   confidenceScore: nat;
+   country: text;
+   ip: text;
+   isMalicious: bool;
+   isp: text;
+   lastReportedAt: text;
+   threatTypes: vec text;
+   totalReports: nat;
+   usageType: text;
+ };
+service : {
+  checkIP: (ip: text) -> (IPResult);
+  /// Set the AbuseIPDB API key (controller only).
+  setAPIKey: (key: text) -> ();
+  /// Transform callback required by the IC HTTP outcalls mechanism.
+  /// Sanitizes response headers before processing.
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+}
